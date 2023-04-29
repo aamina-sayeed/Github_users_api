@@ -1,0 +1,53 @@
+.App {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-align: center;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .container {
+    display: grid;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 1rem;
+    padding: 1rem;
+    color: #4c4b4e;
+  }
+  
+  .user_list {
+    background: rgb(212, 218, 213);
+    margin: 1rem;
+    padding: 1rem;
+    border: groove gray 1px;
+  }
+  
+  .user_list img {
+    width: 180px;
+    height: 180px;
+  }
+  .user_list button {
+    background-color: #58575c;
+    color: azure;
+    padding: 0.5rem 1rem;
+    box-shadow: none;
+    margin: 0.25rem;
+  }
+  .user {
+    background: #5e5988;
+    background-color: rgb(238, 238, 238);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    color: rgb(43, 42, 69);
+    position: relative;
+  }
+  @media screen and (min-width: 758px) {
+    .container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  

@@ -1,0 +1,82 @@
+
+.searchBar{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.searchBar input{
+    margin: 0.5rem;
+    padding: 0.75rem 1rem;
+    width:30rem;
+    border:groove gray 1px;
+}
+
+.searchBar button{
+    margin: 0.5rem;
+    padding: 0.75rem;
+}
+
+#bkhome{
+    width:4rem
+}
+
+.intro{
+    display: flex;
+    width: 90vw;
+    justify-content: center;
+    background-color: rgb(212, 218, 213);
+    border: groove gray 1px;
+    margin:4rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.intro .icon img{
+    border-radius: 2rem;
+    width: 120px;
+    height: 120px;
+  
+}
+
+.intro .icon{
+    line-height: 3rem;
+}
+.intro .para{
+    padding: 1rem;
+    line-height: 2.2rem;
+    margin-left: 2rem;
+}
+
+.intro .para button{
+ 
+    background-color: #58575c;
+    padding: 0.5rem 1rem;
+    box-shadow: none;
+    margin: 0.25rem;
+}
+.intro .para button a{
+text-decoration: none;
+color: azure;
+}
+
+
+.list{
+  display: grid;
+  width: 90vw;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  margin: 4rem;
+  background-color: rgb(212, 218, 213);
+  padding: 2rem;
+  border: groove gray 1px;
+}
+
+.comp{
+    width: 90vw;
+    margin: 2rem 4rem;
+    background-color: rgb(212, 218, 213);
+    padding: 2rem;
+    border: groove gray 1px;
+}
