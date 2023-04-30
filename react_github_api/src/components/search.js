@@ -56,7 +56,7 @@ export const Search = () => {
   <button onClick={handleClick}>Search</button>
   </div>
   
-  {(users.name != null || users.length!=0 || search!='' || users.login!=null) && <UserDisplay users={users} />}
+  {(users.login) && <UserDisplay users={users} />}
   {(search === null || search === ''||String(users.login).toUpperCase()!=search.toUpperCase()) && <UsersList />}
 
   </>
