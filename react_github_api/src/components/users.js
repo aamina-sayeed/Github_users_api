@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
-
+import "../user_style.css"
 export const UsersList = () => {
   //useState and Effect must be inside react component always
   const [users, setUsers] = useState([]);
@@ -27,7 +27,7 @@ export const UsersList = () => {
             image={user.avatar_url}
             user_name={user.login}
             git={user.html_url}
-            key={user.id}
+             key_val={user.id}
           />
         );
       })}
@@ -35,14 +35,13 @@ export const UsersList = () => {
   );
 };
 
-export default function Users({ image, user_name, git, key,users }) {
+export default function Users({ image, user_name, git, key_val,users }) {
   return (
     <section className="user_list">
-      <h3>{key}</h3>
+      {/* <h3>{key_val}</h3> */}
       <img src={image} alt="Image alt" />
       <h2>{user_name}</h2>
-      <a href={git}>Git Profile</a>
+      <button><a href={git} target="_blank">Git Profile</a></button>
     </section>
   );
 }
-

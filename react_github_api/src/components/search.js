@@ -23,55 +23,46 @@ export const Search = () => {
   
     }
     };
-    api_fetch();
+    if (search) {
+            api_fetch();
+    } else {
+            setUsers([]);
+        }
   }, [search]); 
   //empty array means useEffect called only once
   // if (!users) {
   //   return <div>Loading...</div>;
   // }
+  
   const handleChange=(e)=>{
- 
-    setSearchKey(e.target.value)
+
+      setSearchKey(e.target.value)
    
   }
-  const handleClick=(e)=>{
-    if(searchkey){
-      setSearch(searchkey)
-    }
-   console.log(search)
-  }
-
-  if(users.name!=null){
-  return(
-    <>
-  <div className="searchBar">
-  <input type="search"  placeholder="Search Users .." onChange={handleChange} colspan/>
   
-  <button onClick={handleClick}>Search</button>
-  <button >Back Home</button>
-  </div>
-  <UserDisplay users={users}/> 
-  {/* <Link to="/home">
-            <button>Back to Home</button>
-    </Link> */}
-  </>
-  )
-}
-else{
+  const handleClick=(e)=>{
+   
+
+      setSearch(searchkey || '') //sets setSearch value to '' if search key is empty or null or false or undeifned etc 
+  
+    console.log(search)
+  }
+  console.log(search)
+  console.log(users.name)
   return(
     <>
   <div className="searchBar">
-  <input type="search"  placeholder="Search Users .." onChange={handleChange}/> 
-  {/* we need to have onChange as
-  it stores the search bar keyword to pass to onClick of Search button * as search button is button type
-and does not store any info to make as setSearch*/}
+  <input type="search"  placeholder="Search Users .." onChange={handleChange} />
   <button onClick={handleClick}>Search</button>
   </div>
-  <UsersList/>
-  </>)
-}
-}
+  
+  {(users.name != null || users.length!=0 || search!='' || users.login!=null) && <UserDisplay users={users} />}
+  {(search === null || search === ''||String(users.login).toUpperCase()!=search.toUpperCase()) && <UsersList />}
 
+  </>
+)
+  
+  }
 
 function UserDisplay({users}){
   const {avatar_url,name,location,bio,html_url,login,blog,followers,following,public_repos,public_gists}=users
@@ -108,9 +99,7 @@ function UserDisplay({users}){
     <RepoNames login={login}/>
     </>
   )
-
-
-}
+  }
 
 const RepoNames = ({login}) => {
 
